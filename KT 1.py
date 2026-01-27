@@ -1,53 +1,30 @@
 import random
-def otvet_babushki():
+
+def otvet():
     return f"НЕТ, НИ РАЗУ С {random.randint(1930, 1950)} ГОДА!"
 
-govor = str(input("ЧЕГО СКАЗАТЬ-ТО ХОТЕЛ,МИЛОК?!"))
+bye_streak = 0
+
+govor = input("ЧЕГО СКАЗАТЬ-ТО ХОТЕЛ, МИЛОК?! ")
+
 while True:
+    govor = govor.strip()
 
     if govor == "ПОКА!":
-        print(otvet_babushki())
-        govor = str(input(""))
-        if govor == "ПОКА!":
-            print(otvet_babushki())
-            import random
+        bye_streak += 1
 
-
-            def otvet_babushki():
-                return f"НЕТ, НИ РАЗУ С {random.randint(1930, 1950)} ГОДА!"
-
-
-            govor = str(input("ЧЕГО СКАЗАТЬ-ТО ХОТЕЛ,МИЛОК?!"))
-            while True:
-
-                if govor == "ПОКА!":
-                    print(otvet_babushki())
-                    govor = str(input(""))
-                    if govor == "ПОКА!":
-                        print(otvet_babushki())
-                        govor = str(input(""))
-                        if govor == "ПОКА!":
-                            print("ДО СВИДАНИЯ, МИЛЫЙ!")
-                            break
-                        else:
-                            continue
-                    else:
-                        continue
-                elif govor.isupper():
-                    print(otvet_babushki())
-                else:
-                    print("АСЬ?! ГОВОРИ ГРОМЧЕ, ВНУЧЕК!")
-                govor = str(input(""))
-
-            if govor == "ПОКА!":
-                print("ДО СВИДАНИЯ, МИЛЫЙ!")
-                break
-            else:
-                continue
+        if bye_streak == 3:
+            print("ДО СВИДАНИЯ, МИЛЫЙ!")
+            break
         else:
-            continue
-    elif govor.isupper():
-        print(otvet_babushki())
+            print(otvet())
+
     else:
-        print("АСЬ?! ГОВОРИ ГРОМЧЕ, ВНУЧЕК!")
-    govor = str(input(""))
+        bye_streak = 0
+
+        if govor.isupper() and govor != "":
+            print(otvet())
+        else:
+            print("АСЬ?! ГОВОРИ ГРОМЧЕ, ВНУЧЕК!")
+
+    govor = input()
