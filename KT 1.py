@@ -2,11 +2,9 @@ import random
 def otvet_babushki():
     return f"НЕТ, НИ РАЗУ С {random.randint(1930, 1950)} ГОДА!"
 
-
-# БЕСКОНЕЧНЫЙ ЦИКЛ ПОД ТЗ, ДЛЯ ВЫХОД ИЗ ЦИКЛ ВВЕСТИ ПОДРЯД "ПОКА!"  - 3 РАЗА
 govor = str(input("ЧЕГО СКАЗАТЬ-ТО ХОТЕЛ,МИЛОК?!"))
 while True:
-    # ДОРОГА НА ВЫХОД ИЗ ПРОГРАММЫ
+
     if govor == "ПОКА!":
         print(otvet_babushki())
         govor = str(input(""))
@@ -19,10 +17,9 @@ while True:
                 return f"НЕТ, НИ РАЗУ С {random.randint(1930, 1950)} ГОДА!"
 
 
-            # БЕСКОНЕЧНЫЙ ЦИКЛ ПОД ТЗ, ДЛЯ ВЫХОД ИЗ ЦИКЛ ВВЕСТИ ПОДРЯД "ПОКА!"  - 3 РАЗА
             govor = str(input("ЧЕГО СКАЗАТЬ-ТО ХОТЕЛ,МИЛОК?!"))
             while True:
-                # ДОРОГА НА ВЫХОД ИЗ ПРОГРАММЫ
+
                 if govor == "ПОКА!":
                     print(otvet_babushki())
                     govor = str(input(""))
